@@ -32,11 +32,7 @@ workflows:
       - my-job
 
   conditional-workflow:
-    when:
-      and:
-        # Add condition to execute this workflow when condition-workflow is equal to true
-        - equal: [ main, << pipeline.git.branch >> ]
-        - equal : [condition-workflow, true]
-        #- << pipeline.parameters.condition-workflow >>
+    when: << pipeline.parameters.condition-workflow >>
+          # Add condition to execute this workflow when condition-workflow is equal to true
     jobs:
       - conditional-job
