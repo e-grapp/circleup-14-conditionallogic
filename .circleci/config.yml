@@ -3,7 +3,7 @@ version: 2.1
 parameters:
   condition-workflow:
     type: boolean
-    default: false
+    default: true
 
 jobs:
   my-job:
